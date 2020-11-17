@@ -5,13 +5,21 @@
 
 2.如果你使用的是环信的老的EaseUI,在ios13.0系统以上收不到消息那么:
 
-可以尝试修改EaseUI.podspec
+<1>.可以尝试修改EaseUI.podspec
 
 ```
 将支持的Hyphenate改为3.6.4 当然pod会给你Install3.6.9 的版本, 这里3.6.9 的版本是最低支持9.0的系统.
 
 ```
-将这个文件修改一下,将之前podfile文件的安装
+<2>.将这个文件修改一下,将之前podfile文件的安装
+
+```
+#pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git', :tag => ‘3.4.2’
+#pod 'Hyphenate','~> 3.4.1'
+
+```
+注释掉
+
 ```
 Pod::Spec.new do |spec|
   spec.name         = 'EaseUI'
@@ -39,17 +47,13 @@ end
 
 ```
 
-```
-#pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git', :tag => ‘3.4.2’
-#pod 'Hyphenate','~> 3.4.1'
 
-```
-注释掉
 
-下载EaseUI最新的3.5.3的版本将他放到项目同级目录,用本地的cocoapods管理.
+<3>.下载EaseUI最新的3.5.3的版本将他放到项目同级目录,用本地的cocoapods管理.
 ```
 pod 'EaseUI', :path => './EaseUI/EaseUI.podspec'
 ```
+就可以使用了
 
 看到网上有很多想换这个那个的可以尝试一下替换一下.当然不需要的话那就算了.
 
